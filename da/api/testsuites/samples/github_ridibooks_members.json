@@ -1,0 +1,25 @@
+{
+  "api": {
+    "uri": "https://api.github.com/orgs/ridibooks/members",
+    "timeout" : 10
+  },
+  "tests": [
+    {
+      "type": "status_code",
+      "expected": 200
+    },
+    {
+      "type": "list",
+      "aggregator": "length",
+      "condition": "greater-than-equal-to",
+      "jsonpath": "$[*]",
+      "expected": 3
+    },
+    {
+      "type": "list",
+      "condition": "in",
+      "jsonpath": "$[*].login",
+      "expected": "namenu"
+    }
+  ]
+}

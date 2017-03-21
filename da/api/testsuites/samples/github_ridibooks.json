@@ -1,0 +1,24 @@
+{
+  "api": {
+    "uri": "https://api.github.com/orgs/ridibooks",
+    "timeout" : 10
+  },
+  "tests": [
+    {
+      "type": "status_code",
+      "expected": 200
+    },
+    {
+      "type": "string",
+      "condition": "exact",
+      "jsonpath": "$.url",
+      "expected": "https://api.github.com/orgs/ridibooks"
+    },
+    {
+      "type": "numeric",
+      "condition": "greater-than-equal-to",
+      "jsonpath": "$.public_repos",
+      "expected": 1
+    }
+  ]
+}
