@@ -97,6 +97,7 @@ The following test case checks if the numeric value at *"$.public_repos"* is gre
 ### 2.3.4. list
 Unlike the other types, the *list* type supports not only conditions but also *aggregation* methods. When using aggregation, you can apply the conditions of the numeric type. The list type supports the following aggregation methods:
 * *length*: The length of the list.
+* *inner-list-length*: The length of the lists inside the list.
 * *max*: The maximum value from the list.
 * *min*: The minimum value from the list.
 * *all*: All values in the list.

@@ -6,6 +6,7 @@ def examine_list(self, actual_list, expected, aggregator, condition):
     """Examine the list with aggregator (e.g., length) and condition"""
     examine_aggregation_functions = {
         'length': examine_length,
+        'inner-list-length': examine_inner_list_length,
         'max': examine_max,
         'min': examine_min,
         'all': examine_all
@@ -35,6 +36,11 @@ def examine_in(self, actual_list, expected):
 
 def examine_length(self, actual_list, expected, condition):
     examine_numeric(self, len(actual_list), expected, condition, 'in the examination of the length of list')
+
+
+def examine_inner_list_length(self, actual_list, expected, condition):
+    for inner_list in actual_list:
+        examine_length(self, inner_list, expected, condition)
 
 
 def examine_max(self, actual_list, expected, condition):
